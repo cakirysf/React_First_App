@@ -1,5 +1,5 @@
 # İlk React Projesi | React First App
-<p>React Küphanesinin ilk kullanımını gösteren ilk projem ile karşınızdayım. Kodları inceleyerek aşağıda başlıklar altında verilen tüm özellikleri inceleyebilirsiniz.</p>
+<p>React Kütüphanesinin ilk kullanımını gösteren ilk projem ile karşınızdayım. Kodları inceleyerek aşağıda başlıklar altında verilen tüm özellikleri inceleyebilirsiniz.</p>
 <ul>
   <li>App & JSX</li>
   <li>Functional Components</li>
