@@ -1,0 +1,110 @@
+import Card from './Card';
+import { data } from './constants';
+
+/*
+ ! JSX (Javascript XML):
+ * react tarafında kullanılan söz dziimi
+ * Ksx javascript içerisnde HTML benzeri bir yapıyla
+ * arayüzü tanımlamaya yarar.
+ 
+ * HTML'den farkları:
+ * {}: doğrudan jsx içerisne js kodu yazabiliyoruz
+ * className: sınıf tanımlarken class yerine kullanılır
+ * inline css: {{}} çift paranetz içerisne stilleri yazarız. / camelCase
+ * <div/> : bütün etiketler self closing olabilir
+ * input / img / br : gibi etiiketlerde kapnış mutlaka olmalı
+ * olay izleme: izleme istediğimiz olayları direkt etikete tanımlıyoruz.
+ * <>: fragment
+*/
+
+function Main() {
+  const text = '...';
+  const url =
+    'https://digitalassets-shop.tesla.com/image/upload/f_auto,q_auto/v1/content/dam/tesla/studio/LIFESTYLE/TOPS/HOODIES_SWEATSHIRTS/1740113-00-A_1_2000.jpg';
+
+  const formatText = (uzunYazi) => {
+    return uzunYazi.slice(0, 20) + '...';
+  };
+
+  const selamla = () => {
+    alert('merhaba');
+  };
+
+  const status = 'success'; // error - success
+
+  return (
+    <main>
+      <p className="text-area">{text}</p>
+
+      <p className="text-area">
+        {formatText('React Temelleri')}
+      </p>
+
+      <div
+        style={{
+          backgroundColor: 'red',
+          height: '100px',
+          margin: '30px',
+          fontSize: '48px',
+          textAlign: 'center',
+         
+        }}
+        >Koşullu Render</div>
+   
+      {/*
+       * Kartlar
+       * Data dizisindeki her bir eleman için
+       * Ekrana bir kart bileşeni bas
+       * Çoklu Renderlama
+       */}
+      <div className="wrapper">
+        {data.map((item) => (
+          <Card
+            image={item.image}
+            category={item.category}
+            title={item.title}
+            theme={item.theme}
+          />
+        ))}
+      </div>
+
+      {/* <img src={url} width={400} />
+      <br />
+
+      <input
+        onChange={(e) => {
+          console.log(e.target.value);
+        }}
+      />
+      <button
+        onClick={() => {
+          alert('selam naber?');
+        }}
+      >
+        Gönder
+      </button>
+
+      <button onClick={selamla}>Selamla</button> */}
+
+      {/* Birden fazla koşul olduğu seneryoda örnek */}
+      {status === 'loading' ? (
+        <p>Yükleniyor...</p>
+      ) : status === 'error' ? (
+        <p>Üzhünüz bir hata oluştu :(</p>
+      ) : (
+        <p 
+        style={{
+            backgroundColor: 'red',
+            
+            margin: '30px',
+            fontSize: '48px',
+            textAlign: 'center',
+           
+          }}
+        >Veri Başarayla Alındı</p>
+      )}
+    </main>
+  );
+}
+
+export default Main;
