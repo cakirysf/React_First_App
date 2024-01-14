@@ -8,7 +8,7 @@
   <li>useState Hook</li>
   <li>Lists & Keys</li>
   <li>Props & Prop Drilling</li>
-  <li></li>Controlled Component Inputs</li>
+  <li>Controlled Component Inputs</li>
 </ul>
 
 <h3 align="left">Languages and Tools:</h3>
